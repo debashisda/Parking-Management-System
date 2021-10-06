@@ -11,31 +11,25 @@ if(isset($_POST['login']))
 	$reta=mysqli_fetch_array($query);
 	$query1=mysqli_query($con,"select email from usertablecontent where email='$username' && password='$password' ");   
 	$retu=mysqli_fetch_array($query1);
-	if($reta>0)
-	{
+	if($reta>0){
 		$_SESSION['checks']=true;
 		header('location:admindashboard.php');
 	}
-	else if($retu>0)
-	{
+	else if($retu>0){
 		$_SESSION['checks']=true;
 		header('location:dashboard.php');
 	}
-   else
-	{
+   else{
 		$msg=true;
 	}
 }
 ?>
-    <html lang="en">
-
-    <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-		 <!--link rel="stylesheet" href="css/boots.css">
-         <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" /-->
-    </head>
-	<style>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">       
+</head>
+<style>
 @font-face {
 	font-family: bootstrap-icons;
   src: url(css/svg/bootstrap-icons.woff2);
@@ -53,10 +47,8 @@ if(isset($_POST['login']))
 }
 .bi-eye-slash::before { content: "\f320"; }
 .bi-eye::before { content: "\f321"; }
-
-	</style>
-
-    <body>
+</style>
+<body>
         <h1>Welcome Back!</h1>
         <?php if($msg) echo "<ul class='auth-form' id='clsem'><li>Invalid username or password.<span class='close'  onclick='errormessage()'>&times;</span></li></ul>";?>
         <div class="auth-form" id="login">
