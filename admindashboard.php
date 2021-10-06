@@ -3,13 +3,10 @@ session_start();
 error_reporting(0);
 include('config/config.php');
 error_reporting(0);
-
-if($_SESSION['checks']!==true)
-{
+if($_SESSION['checks']!==true){
 	header('location:logout.php');	
 }
-else
-{ 
+else{ 
 ?>
 <html lang="en">
 
