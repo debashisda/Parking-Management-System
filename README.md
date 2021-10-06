@@ -1,5 +1,5 @@
 # Parking-Management-System
-this project is currently under developement.
+This project is currently under developement.  
 curretly it contains:
 Fully functional login page,
 registration page, reset password page, user demo page, admin demo page.
