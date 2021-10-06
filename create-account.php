@@ -4,28 +4,21 @@
     if (isset($_POST['register'])) 
 	{
         $name= $_POST['name']; 
-		//$dd=$_POST['dob']; 
-		//echo strrev($dd);
 		$dob=$_POST['dob'];
 		$phone=$_POST['phone'];
 		$email=$_POST['email'];
-        $password = md5($_POST['password']); 
-
+        $password = md5($_POST['password']);
 		$query=mysqli_query($con,"select * from usertablecontent where email='$email' and phone='$phone'");
 		$ret=mysqli_fetch_array($query);
-		if($ret>0)
-		{
+		if($ret>0){
 			echo "<script>alert('email already exist')</script>";
 		}
-		else
-		{
+		else{
 			$sql="insert into usertablecontent values('$name','$dob','$phone','$email','$password')";
-			if(mysqli_query($con,$sql) === TRUE) 
-			{
+			if(mysqli_query($con,$sql) === TRUE){
 				header('location:cs.php');		
 			} 
-			else 
-			{
+			else {
 				echo "<script>alert('Something went wrong')</script>";
 			}
 		}
