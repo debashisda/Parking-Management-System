@@ -2,7 +2,6 @@
 session_start();
 error_reporting(0);
 include('config/config.php');
-
 if(isset($_POST['login']))
 {
     $username=$_POST['username'];
