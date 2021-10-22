@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
 <head>    
     <title>Reset Password</title>
     <link href='css/resetstyle.css' rel='stylesheet' type='text/css'>	
-	<script>
+     <script>
 		function checkpass()
 		{
 			if(document.changepassword.newpassword.value!=document.changepassword.confirmpassword.value)
@@ -38,7 +38,7 @@ if(isset($_POST['submit']))
 			}
 			return true;
 		} 
-	</script>
+    </script>
 </head>
 <body>    
 <h1>Parking Management System</h1>             
