@@ -32,7 +32,7 @@
 		}		
 		else
 		{
-			echo "<script>alert('Account already Verified')";
+			echo "<script>alert('Account already Verified')</script>";
 		}
 			
 	}
