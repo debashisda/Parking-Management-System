@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('config/config.php');
+require('config/config.php');
 error_reporting(0);
 
 if($_SESSION['checks']!==true)
