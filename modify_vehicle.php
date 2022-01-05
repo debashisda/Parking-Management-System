@@ -28,8 +28,7 @@
    header('location:student_dashboard.php');
     }     
    }
-   
-   //remove subject from the student subject table
+    //remove subject from the student subject table
    if(isset($_GET['rms']))
    {
    $r=$_GET['rms'];		
