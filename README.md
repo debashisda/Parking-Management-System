@@ -5,4 +5,4 @@ Fully functional login page,registration page, reset password page
 
 Under developemnt: user demo page, admin demo page.  
 
-feel free to contibute.
+feel free to rectify any errors
