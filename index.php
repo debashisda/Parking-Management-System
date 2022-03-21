@@ -1,24 +1,30 @@
 <?php
-session_start();
-error_reporting(0);
-include('config/config.php');
-if(isset($_POST['login']))
+
+$msg = false;
+include_once('config/config.php');
+extract($_POST);
+if(isset($login))
 {
-    $username=$_POST['username'];
-    $password=md5($_POST['password']);
-    $query=mysqli_query($con,"select AEmail from admintablecontent where AEmail='$username' && APassword='$password' ");
-	$reta=mysqli_fetch_array($query);
-	$query1=mysqli_query($con,"select email from usertablecontent where email='$username' && password='$password' ");   
-	$retu=mysqli_fetch_array($query1);
-	if($reta>0){
+    	$query=mysqli_query($con,"select AEmail from admintablecontent where AEmail='".$username."' && APassword='".$password."';");
+	$reta=mysqli_fetch_assoc($query);
+
+	$query1=mysqli_query($con,"select email from usertablecontent where email='".$username."' && password='".$password."';");   
+	$retu=mysqli_fetch_assoc($query1);
+	
+	if($reta>0)
+	{
+		session_start();
 		$_SESSION['checks']=true;
 		header('location:admindashboard.php');
 	}
-	else if($retu>0){
+	else if($retu>0)
+	{
+		session_start();
 		$_SESSION['checks']=true;
 		header('location:dashboard.php');
 	}
-   else{
+   	else
+	{
 		$msg=true;
 	}
 }
